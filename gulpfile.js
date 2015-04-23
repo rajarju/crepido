@@ -12,6 +12,7 @@ var swig = require('gulp-swig');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var pages = require('gulp-gh-pages');
 
 // Load config.
 var crepido = require('./config');
@@ -85,6 +86,16 @@ gulp.task('watch', function () {
   gulp.watch(['src/assets/**/*'], ['assets']);
   gulp.watch(['boards/**/*'], ['build']);
   gulp.watch(['src/templates/*'], ['build']);
+});
+
+// Gulp 'deploy' task
+gulp.task('deploy', function() {
+  return gulp.src('./public/**/*')
+    .pipe(pages({
+      remoteUrl: crepido.remoteUrl,
+      origin: crepido.origin,
+      branch: crepido.branch
+    }));
 });
 
 // Gulp 'default' task.

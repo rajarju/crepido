@@ -1,5 +1,8 @@
 {
   "title" : "Crepido",
   "description": "Track users and projects visually",
-  "picture" : "http://placehold.it/65x65"
+  "picture" : "http://placehold.it/65x65",
+  "remoteUrl": "git@github.com:arshad/crepido",
+  "origin" : "origin",
+  "branch" : "gh-pages"
 }
