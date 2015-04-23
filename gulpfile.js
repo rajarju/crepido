@@ -10,6 +10,8 @@ var data = require('gulp-data');
 var webserver = require('gulp-webserver');
 var swig = require('gulp-swig');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 // Load config.
 var crepido = require('./config');
@@ -58,8 +60,15 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('public/assets/stylesheets'));
 });
 
+gulp.task('js', function(){
+  return gulp.src('src/assets/javascripts/**/*.js')
+    .pipe(uglify())
+    .pipe(concat('script.min.js'))
+    .pipe(gulp.dest('public/assets/javascripts'));
+});
+
 // Gulp 'assets' task
-gulp.task('assets', ['sass']);
+gulp.task('assets', ['sass', 'js']);
 
 // Gulp 'webserver' task: setups the webserver and enable livereload.
 gulp.task('webserver', function() {
