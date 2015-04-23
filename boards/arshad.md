@@ -1,6 +1,6 @@
 ---
 name: Arshad
-avatar: https://avatars0.githubusercontent.com/u/124599?v=3&s=460
+picture: https://avatars0.githubusercontent.com/u/124599?v=3&s=460
 ---
 
 # In Progress

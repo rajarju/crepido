@@ -102,8 +102,8 @@ function buildBoards() {
     // Create a machine_name.
     data.attributes.machine_name = data.attributes.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
-    // Set a default avatar.
-    data.attributes.avatar = data.attributes.avatar || crepido.avatar;
+    // Set a default picture.
+    data.attributes.picture = data.attributes.picture || crepido.picture;
     crepido.boards.push(data);
   });
 
