@@ -22,7 +22,8 @@ markedRenderer.heading = function(text, level) {
   var prefix = '<h' + level + '>';
   // Wrap in a div if h1
   if (level == 1) {
-    prefix = '<div class="crepido__section__card">' + prefix;
+    var name = text.toLowerCase().replace(/[^\w]+/g, '-');
+    prefix = '<div class="board__card board__card--' + name + '">' + prefix;
   }
   return prefix + text + '</h' + level + '>';
 }
@@ -113,6 +114,7 @@ function buildBoards() {
 // Converts [string] to <span class="label">string</span>.
 function labelize(string) {
   return string.replace(new RegExp("\\[(.*)\\]", "gi"), function($0, $1) {
-    return '<span class="label">' + $1 + '</span>';
+    var name = $1.toLowerCase().replace(/[^\w]+/g, '-');
+    return '<span class="label label--' + name + '">' + $1 + '</span>';
   });
 }

@@ -3,19 +3,19 @@
 .crepido {
   display: table;
   margin: 20px auto;
-
-  .crepido__board {
-    width: 300px;
-    float: left;
-  }
-  .crepido__board + .crepido__board {
-    margin-left: 40px;
-  }
 }
 
-.crepido__board__header {
+.board {
+  width: 300px;
+  float: left;
+}
+.board + .board {
+  margin-left: 40px;
+}
+
+.board__header {
   text-align: center;
-  .crepido__picture {
+  .board__picture {
     display: inline-block;
     margin: 0 auto 5px;
     width: 65px;
@@ -29,14 +29,14 @@
       height: auto;
     }
   }
-  .crepido__name {
+  .board__name {
     margin: 0 0 20px;
   }
 }
 
-.crepido__section__card {
+.board__card {
   margin: 0 0 20px;
-  background: white;
+  background-color: map-get($board-colors, "default");
   overflow: hidden;
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -49,6 +49,8 @@
     font-size: 1.0em;
     text-align: center;
     padding: 10px 15px;
+    text-transform: uppercase;
+    color: white;
   }
   > ul {
     margin: 0;
@@ -63,5 +65,21 @@
       border: 1px solid #eee;
       border-width: 1px 0;
     }
+  }
+}
+
+// Board colors.
+// -----------------------------------------------------------------------------
+@each $name, $color in $board-colors {
+  .board__card--#{$name} {
+    background-color: $color;
+  }
+}
+
+// Label colors.
+// -----------------------------------------------------------------------------
+@each $name, $color in $label-colors {
+  .label--#{$name} {
+    background-color: $color;
   }
 }
