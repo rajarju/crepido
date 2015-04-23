@@ -9,7 +9,7 @@
     float: left;
   }
   .crepido__section + .crepido__section {
-    margin-left: 20px;
+    margin-left: 40px;
   }
 }
 
@@ -30,13 +30,20 @@
     }
   }
   .crepido__user__name {
-
+    margin: 0 0 20px;
   }
 }
 
 .crepido__section__card {
   margin: 0 0 20px;
-  border: 1px solid #ddd;
+  background: white;
+  overflow: hidden;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   > h1 {
     margin: 0;
     font-size: 1.0em;
@@ -53,7 +60,7 @@
       padding: 10px 15px;
       margin-bottom: -1px;
       background-color: #fff;
-      border: 1px solid #ddd;
+      border: 1px solid #eee;
       border-width: 1px 0;
     }
   }
