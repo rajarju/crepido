@@ -325,6 +325,11 @@ body {
   background-color: #ecf0f1;
   color: #111; }
 
+a {
+  color: #111; }
+  a:hover, a:focus {
+    color: #5e5e5e; }
+
 .label {
   padding: .2em .6em .3em;
   margin-right: 0.6em;
@@ -348,6 +353,11 @@ h1, h2, h3, h4, h5 {
   font-weight: 500; }
 
 /* Layout */
+footer {
+  text-align: center;
+  font-size: 0.85em;
+  margin: 50px auto 0; }
+
 /* Modules */
 .crepido {
   display: table;
