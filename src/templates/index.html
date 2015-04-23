@@ -7,15 +7,15 @@
 </head>
 <body>
     <div class="crepido">
-        {% for user in users %}
-            <div class="crepido__section">
-                <div class="crepido__user">
-                    <a href="#" class="crepido__user__avatar">
-                        <img src="{{ user.attributes.avatar }}" />
+        {% for board in boards %}
+            <div class="crepido__board">
+                <div class="crepido__board__header">
+                    <a href="#" class="crepido__avatar">
+                        <img src="{{ board.attributes.avatar }}" />
                     </a>
-                    <h3 class="crepido__user__name">{{ user.attributes.name }}</h3>
+                    <h3 class="crepido__name">{{ board.attributes.name }}</h3>
                 </div>
-                {{ user.body|safe }}
+                {{ board.body|safe }}
             </div>
         {% endfor %}
     </div>

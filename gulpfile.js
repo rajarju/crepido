@@ -44,7 +44,7 @@ markedRenderer.list = function(body, ordered) {
 gulp.task('build', function() {
   gulp.src('./src/templates/index.html')
     .pipe(data(function() {
-      return buildUsers();
+      return buildBoards();
     }))
     .pipe(swig())
     .pipe(gulp.dest('public'));
@@ -73,19 +73,19 @@ gulp.task('webserver', function() {
 // Gulp 'watch' task
 gulp.task('watch', function () {
   gulp.watch(['src/assets/**/*'], ['assets']);
-  gulp.watch(['users/**/*'], ['build']);
+  gulp.watch(['boards/**/*'], ['build']);
   gulp.watch(['src/templates/*'], ['build']);
 });
 
 // Gulp 'default' task.
 gulp.task('default', ['assets', 'build', 'webserver', 'watch']);
 
-// Builds users from ./users/*.md
-function buildUsers() {
-  crepido.users = [];
+// Builds boards from ./boards/*.md
+function buildBoards() {
+  crepido.boards = [];
 
-  // Get user files.
-  var files = fs.readdirSync('./users', function(error, files) {
+  // Get board files.
+  var files = fs.readdirSync('./boards', function(error, files) {
     if (error) { console.log(error); }
   });
 
@@ -93,7 +93,7 @@ function buildUsers() {
   files.filter(function(file) { return file.substr(-3) === '.md'; })
 
   files.map(function(file) {
-    var content = fs.readFileSync(path.resolve(__dirname, 'users', file), 'utf8');
+    var content = fs.readFileSync(path.resolve(__dirname, 'boards', file), 'utf8');
     var data = frontMatter(content);
     data.body = marked(data.body, {
       renderer: markedRenderer
@@ -104,7 +104,7 @@ function buildUsers() {
 
     // Set a default avatar.
     data.attributes.avatar = data.attributes.avatar || crepido.avatar;
-    crepido.users.push(data);
+    crepido.boards.push(data);
   });
 
   return crepido;

@@ -4,18 +4,18 @@
   display: table;
   margin: 20px auto;
 
-  .crepido__section {
+  .crepido__board {
     width: 300px;
     float: left;
   }
-  .crepido__section + .crepido__section {
+  .crepido__board + .crepido__board {
     margin-left: 40px;
   }
 }
 
-.crepido__user {
+.crepido__board__header {
   text-align: center;
-  .crepido__user__avatar {
+  .crepido__avatar {
     display: inline-block;
     margin: 0 auto 5px;
     width: 65px;
@@ -29,7 +29,7 @@
       height: auto;
     }
   }
-  .crepido__user__name {
+  .crepido__name {
     margin: 0 0 20px;
   }
 }
