@@ -1,0 +1,60 @@
+// Crepido
+//------------------------------------------------------------------------------
+.crepido {
+  display: table;
+  margin: 20px auto;
+
+  .crepido__section {
+    width: 300px;
+    float: left;
+  }
+  .crepido__section + .crepido__section {
+    margin-left: 20px;
+  }
+}
+
+.crepido__user {
+  text-align: center;
+  .crepido__user__avatar {
+    display: inline-block;
+    margin: 0 auto 5px;
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .crepido__user__name {
+
+  }
+}
+
+.crepido__section__card {
+  margin: 0 0 20px;
+  border: 1px solid #ddd;
+  > h1 {
+    margin: 0;
+    font-size: 1.0em;
+    text-align: center;
+    padding: 10px 15px;
+  }
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none outside none;
+    li {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: -1px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-width: 1px 0;
+    }
+  }
+}

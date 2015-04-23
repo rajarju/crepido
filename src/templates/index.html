@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }} | {{ description }}</title>
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+</head>
+<body>
+    <div class="crepido">
+        {% for user in users %}
+            <div class="crepido__section">
+                <div class="crepido__user">
+                    <a href="#" class="crepido__user__avatar">
+                        <img src="{{ user.attributes.avatar }}" />
+                    </a>
+                    <p class="crepido__user__name">{{ user.attributes.name }}</p>
+                </div>
+                {{ user.body|safe }}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
