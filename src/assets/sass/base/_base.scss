@@ -5,6 +5,13 @@ body {
   color: $text-color;
 }
 
+a {
+  color: $text-color;
+  &:hover, &:focus {
+    color: lighten($text-color, 30);
+  }
+}
+
 .label {
   padding: .2em .6em .3em;
   margin-right: 0.6em;
