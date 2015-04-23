@@ -11,10 +11,8 @@ var webserver = require('gulp-webserver');
 var swig = require('gulp-swig');
 var sass = require('gulp-sass');
 
-var crepido = {
-  "title" : "Crepido",
-  "description" : "Track users and projects"
-};
+// Load config.
+var crepido = require('./config');
 
 // Custom renderer for Marked.
 var markedRenderer = new marked.Renderer();
@@ -105,7 +103,7 @@ function buildUsers() {
     data.attributes.machine_name = data.attributes.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
     // Set a default avatar.
-    data.attributes.avatar = data.attributes.avatar || 'http://placehold.it/65x65';
+    data.attributes.avatar = data.attributes.avatar || crepido.avatar;
     crepido.users.push(data);
   });
 
